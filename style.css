@@ -1,21 +1,54 @@
+/*colocar borda no meio para dividir em duas colunas*/
+
+body {
+    margin-left: ;
+    background-color: rgb(161, 103, 16);
+}
+
 h1 {
-    font-size: 4em;
+    font-size: ;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    padding-top: 1em;
+    padding-top: ;
 }
 
-.escolha {
-    margin: 2em 0 0 2em;
-
+.escolhas {
+    font-size: ;
+    margin: ;
+    display: inline-block;
+    flex-direction: row;
 }
 
-legend {
-    font-size: 2em;
-}
-
-#escolha_pkm {
-    font-size: 2em;
+#escolha_pkm, #escolha_golpe {
+    font-size: ;
     text-align: center;
+}
+
+.escolha_img img {
+    max-width:480px;
+    max-height:360px;
+    width: auto;
+    height: auto;
+}
+
+.forma {
+    font-size: ;
+    margin: ;
+}
+
+.status {
+    font-size: ;
+    margin: ;
+}
+
+table, th, td {
+    font-size: ;
+    padding: ;
+    text-align: center;
+    border: 1px solid black;
+}
+
+thead, tbody {
+    font-weight: bold;
 }
