@@ -1,128 +1,214 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Batalha</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <! -- https://pokeapi.co/ -->
 </head>
+
 <body>
     <header>
-        <h1>Calculadora de Batalha Pokémon</h1>
+        <h1>Calculadora de Batalhas Pokémon</h1>
     </header>
     <main>
-        <form method="get" action="">
-
 <! -- aqui vai escolher o pkm -->
-            <div class="escolhas">
-                <fieldset>
-                    <legend>Escolha seu Pokémon</legend>
-                    <select name="escolha_pkm" id="escolha_pkm">
-                        <option value="1">Bulbasaur</option>
-                        <option value="2">Ivysaur</option>
-                        <option value="3">Venusaur</option>
-                    </select>
-                </fieldset>
-            </div>
+        <div class="escolhas">
+            <fieldset>
+                <legend>Escolha seu Pokémon</legend>
+                <select name="escolha_pkm" id="escolha_pkm">
+                    <option value="1">Bulbasaur</option>
+                    <option value="2">Ivysaur</option>
+                    <option value="3">Venusaur</option>
+                </select>
 
 <! -- aqui vai escolher o lv do pkm, 1 a 100 (3 digitos) -->
-            <div class="escolhas">
                 <filedset>
                     <legend>Level</legend>
-                    <textarea name="level" id="" maxlength="3" required></textarea>
+                    <textarea name="level" id="pkmLevel" maxlength="3" required></textarea>
                 </filedset>
-            </div>
+            </fieldset>
 
-<! -- AUTOMATIZAR! aqui a img vai mudar de acordo com o pokemon escolhido -->
-            <div>
-                <filedset>
-                    <figure class="escolha_img">
-                        <img src="img/001.png" alt="">
-                    </figure>
-                </filedset>
-            </div>
-
-<! -- forma é um modificador de status do rolleplay. Normal = padrão. Shiny = -10%. Top = +10%. Muito pequeno = -20%. Muito grande = +20%. -->
-            <div>
-                <filedset class="forma">
-                    <legend>Forma</legend>
-                    <input type="radio" checked>Normal
-                    <input type="radio">Shiny
-                    <input type="radio">Topper
-                    <br>
-                    <input type="radio">Muito pequeno
-                    <input type="radio">Muito grande
-                </fieldset>
-            </div>
+<! -- forma é um modificador de status do rolleplay. Normal=padrão. Shiny=-10%. Top=+10%. Muito pequeno=-20%. Muito grande=+20%. -->
+            <filedset class="forma"></filedset>
+                <input type="radio" id="normal" name="tamanho" value="normal" checked>
+                <label for="normal">Normal</label>
+                <input type="radio" id="shiny" name="tamanho" value="shiny">
+                <label for="shiny">Shiny</label>
+                <input type="radio" id="topper" name="tamanho" value="topper">
+                <label for="topper">Topper</label><br>
+                <input type="radio" id="muitoPequeno" name="tamanho" value="muitoPequeno">
+                <label for="muitoPequeno">Muito pequeno</label>
+                <input type="radio" id="muitoGrande" name="tamanho" value="muitoGrande">
+                <label for="muitoGrande">Muito grande</label>
+            </fieldset>
 
 <! -- AUTOMATIZAR! Aqui ficam os status base do pokemon escolhido e multiplicado pelo level (atual) -->
-            <div class="status">
-                <legend>Staus Base</legend>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Base</th>
-                            <th>Valor</th>
-                            <th>Atual</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>HP</td>
+            <legend>Dados Base</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Base</th>
+                        <th>Valor</th>
+                        <th>Atual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HP</td>
+                        <td>#</td>
+                        <td># * lvl</td>
+                    </tr>
+                    <tr>
+                        <td>Ataque</td>
                             <td>#</td>
                             <td># * lvl</td>
-                        </tr>
-                        <tr>
-                            <td>Ataque</td>
+                    </tr>
+                    <tr>
+                        <td>Defesa</td>
                             <td>#</td>
                             <td># * lvl</td>
-                        </tr>
-                        <tr>
-                            <td>Defesa</td>
+                    </tr>
+                    <tr>
+                        <td>Ata. Especial</td>
+                        <td>#</td>
+                        <td># * lvl</td>
+                    </tr>
+                    <tr>
+                        <td>Def. Especial</td>
+                        <td>#</td>
+                        <td># * lvl</td>
+                    </tr>
+                    <tr>
+                        <td>Velocidade</td>
+                        <td>#</td>
+                        <td># * lvl</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+<! -- aqui vai escolher o pkm -->
+        <div class="escolhas">
+            <fieldset>
+                <legend>Escolha seu Pokémon</legend>
+                <select name="escolha_pkm" id="escolha_pkm">
+                    <option value="1">Bulbasaur</option>
+                    <img src="img/001.png" alt="" class="pokemon_gif">
+                    <option value="2">Ivysaur</option>
+                    <option value="3">Venusaur</option>
+                </select>
+            
+    
+<! -- aqui vai escolher o lv do pkm, 1 a 100 (3 digitos) -->
+                <filedset>
+                    <legend>Level</legend>
+                    <textarea name="level" id="pkmLevel" maxlength="3" required></textarea>
+                </filedset>
+            </fieldset>
+
+<! -- forma é um modificador de status do rolleplay. Normal=padrão. Shiny=-10%. Top=+10%. Muito pequeno=-20%. Muito grande=+20%. -->
+            <filedset class="forma"></filedset>
+                <input type="radio" id="normal" name="tamanho" value="normal" checked>
+                <label for="normal">Normal</label>
+                <input type="radio" id="shiny" name="tamanho" value="shiny">
+                <label for="shiny">Shiny</label>
+                <input type="radio" id="topper" name="tamanho" value="topper">
+                <label for="topper">Topper</label><br>
+                <input type="radio" id="muitoPequeno" name="tamanho" value="muitoPequeno">
+                <label for="muitoPequeno">Muito pequeno</label>
+                <input type="radio" id="muitoGrande" name="tamanho" value="muitoGrande">
+                <label for="muitoGrande">Muito grande</label>
+            </fieldset>
+    
+    <! -- AUTOMATIZAR! Aqui ficam os status base do pokemon escolhido e multiplicado pelo level (atual) -->
+            <legend>Dados Base</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Base</th>
+                        <th>Valor</th>
+                        <th>Atual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HP</td>
+                        <td>#</td>
+                        <td># * lvl</td>
+                    </tr>
+                    <tr>
+                        <td>Ataque</td>
                             <td>#</td>
                             <td># * lvl</td>
-                        </tr>
-                        <tr>
-                            <td>Ata. Especial</td>
+                    </tr>
+                    <tr>
+                        <td>Defesa</td>
                             <td>#</td>
                             <td># * lvl</td>
-                        </tr>
-                        <tr>
-                            <td>Def. Especial</td>
+                    </tr>
+                    <tr>
+                        <td>Ata. Especial</td>
                             <td>#</td>
                             <td># * lvl</td>
-                        </tr>
-                        <tr>
-                            <td>Velocidade</td>
-                            <td>#</td>
-                            <td># * lvl</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    </tr>
+                    <tr>
+                        <td>Def. Especial</td>
+                        <td>#</td>
+                        <td># * lvl</td>
+                    </tr>
+                    <tr>
+                        <td>Velocidade</td>
+                        <td>#</td>
+                        <td># * lvl</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+<! -- AUTOMATIZAR! aqui a img vai mudar de acordo com o pokemon escolhido -->
+        <div>
+            <filedset>
+                <figure>
+                    <img id="arena" src="img/pokemon-stadium-1920-x-1080-wallpaper-dqqp686gjn57ka0u.jpg" alt="">
+                </figure>
+                <figure class="pkm_escolha">
+                    <img id="pkm_escolha_1" src="" alt="">
+                    <img id="pkm_escolha_2" src="" alt="">
+                </figure>
+            </filedset>
+        </div>
 
 <! -- AUTOMATIZAR! Aqui ficam os golpes do pokemon escolhido de acordo com o level (atual), e também os aprendidos por TM e HM -->
-            <div class="escolhas">
-                <legend>Escolha o golpe</legend>
-                <select name="escolha_golpe" id="escolha_golpe">
-                    <option value="1">Growl</option>
-                    <option value="2">Tackle</option>
-                    <option value="3">Vine Whip</option>
-                    <option value="4">Growth</option>
-                </select>
-            </div>
-
-        </form>
-
+        <div class="golpes">
+            <legend>Escolha o golpe</legend>
+            <select name="escolha_golpe" class="golpes" id="escolha_golpe_1">
+                <option value="1">Growl</option>
+                <option value="2">Tackle</option>
+                <option value="3">Vine Whip</option>
+                <option value="4">Growth</option>
+            </select>
+        </div>
+        <div class="golpes"></div>
+            <legend>Escolha o golpe</legend>
+            <select name="escolha_golpe" class="golpes" id="escolha_golpe_2">
+                <option value="1">Growl</option>
+                <option value="2">Tackle</option>
+                <option value="3">Vine Whip</option>
+                <option value="4">Growth</option>
+            </select>
+        </div>
         <hr>
 
 <! -- AUTOMATIZAR! Confronto, caixa de texto: opção por rodada ou automático -->
-
     </main>
     <footer>
 
     </footer>
 </body>
+
 </html>

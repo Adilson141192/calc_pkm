@@ -1,38 +1,52 @@
 /*colocar borda no meio para dividir em duas colunas*/
 
 body {
-    margin-left: ;
-    background-color: rgb(161, 103, 16);
+    background-color: lightgrey;
+    text-align: center;
+    margin: 2%;
+    min-height: 100vh;
+}
+
+main {
+    display: inline-block;
+    padding: 15px;
+    position: relative;
 }
 
 h1 {
-    font-size: ;
+    font-size:  24px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    padding-top: ;
 }
 
-.escolhas {
-    font-size: ;
-    margin: ;
-    display: inline-block;
-    flex-direction: row;
+legend {
+    font-size: 2rem;
 }
 
-#escolha_pkm, #escolha_golpe {
-    font-size: ;
+#pkmLevel {
+    width: 5rem;
+    height: 3rem;
+}
+
+.pokemon_gif {
+    position: absolute;
+    left: 0;
+}
+
+#escolha_pkm, #pkmLevel {
     text-align: center;
+    font-weight:bold ;
+    font-size: 2rem;
 }
 
-.escolha_img img {
-    max-width:480px;
-    max-height:360px;
+#arena {
+    max-width: 960px;
     width: auto;
     height: auto;
 }
 
-.forma {
+/*.forma {
     font-size: ;
     margin: ;
 }
@@ -40,13 +54,12 @@ h1 {
 .status {
     font-size: ;
     margin: ;
-}
+}*/
 
 table, th, td {
-    font-size: ;
-    padding: ;
     text-align: center;
     border: 1px solid black;
+    padding: 3px;
 }
 
 thead, tbody {
